@@ -1,4 +1,12 @@
-// Created By Yarden halely & Natalia Akulov
+/**
+ * Authors:
+ * Programmer 1: Natalia Akulov
+ * Programmer 2: Yarden Halely
+ * 
+ * File Name: ExIntro3.js
+ * Purpose: Count the number of zeros in an array using a conditional expression.
+ */
+
 const numbers = [0, 1, 2, 0, 3, 0, 4, 0, 5]; // Example array of numbers
 
 let zeroCount = 0; // Initialize a counter for zeros

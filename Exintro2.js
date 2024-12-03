@@ -1,30 +1,36 @@
-// Created By Yarden halely & Natalia Akulov
-// Function to print prime numbers up to a specified maxNumber
-function printPrimes(maxNumber) {
-  // Loop through numbers starting from 2 up to maxNumber
-  for (let currNum = 2; currNum <= maxNumber; currNum++) {
-    // Assume the current number is prime initially
-    let isPrime = true;
+/**
+ * Authors:
+ * Programmer 1: Natalia Akulov
+ * Programmer 2: Yarden Halely
+ * 
+ * File Name: ExIntro2.js
+ * Purpose: Print all prime numbers less than 237.
+ */
 
-    // Check divisibility from 2 up to the square root of currNum
-    // We only need to check up to Math.sqrt(currNum) for efficiency
-    for (let j = 2; j <= Math.sqrt(currNum); j++) {
-      // If currNum is divisible by any number between 2 and sqrt(currNum),
-      // it's not a prime number
-      if (currNum % j === 0) {
-        // 8 % 2
-        // Set isPrime to false and exit the loop
-        isPrime = false;
-        break; // No need to check further divisors
-      }
-    }
+/**
+ * Determines whether a number is prime.
+ * 
+ * @param {number} num - The number to check for primality.
+ * @returns {boolean} - True if the number is prime, false otherwise.
+ */
+function isPrime(num) {
+  if (num < 2) return false; // Numbers less than 2 are not prime
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false; // Divisible by another number
+  }
+  return true;
+}
 
-    // If no divisors were found, currNum is prime, so print it
-    if (isPrime) {
-      console.log(currNum);
-    }
+/**
+* Prints all prime numbers less than a given limit.
+* 
+* @param {number} limit - The upper limit (exclusive) for prime numbers.
+*/
+function printPrimes(limit) {
+  for (let i = 2; i < limit; i++) {
+    isPrime(i) && console.log(i); // Print the number if it is prime
   }
 }
 
-// Calling the function with 9 as the maximum number to print primes up to
-printPrimes(237); // This will print primes up to 9
+// Print all prime numbers less than 237
+printPrimes(237);
