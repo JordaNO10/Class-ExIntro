@@ -22,22 +22,22 @@ function isValidNumber(input) {
 /**
 * Determines the divisibility of a number by 2, 3, and 5 and prints the result.
 * 
-* @param {number} usersNumber - The number to check for divisibility.
+* @param {number} num - The number to check for divisibility.
 * - Prints 3 if divisible by 2, 3, and 5.
 * - Prints 2 if divisible by any two of them.
 * - Prints 1 if divisible by only one of them.
 */
-function isDivisible(usersNumber) {
+function isDivisible(num) {
 
   // Validate the input
-  if (!isValidNumber(usersNumber)) {
-    console.log(`Error: Invalid input "${usersNumber}".`);
+  if (!isValidNumber(num)) {
+    console.log(`Error: Invalid input "${num}".`);
     return;
   }
   // Check divisibility
-  const divisibleBy2 = usersNumber % 2 === 0; // Is the number divisible by 2?
-  const divisibleBy3 = usersNumber % 3 === 0; // Is the number divisible by 3?
-  const divisibleBy5 = usersNumber % 5 === 0; // Is the number divisible by 5?
+  const divisibleBy2 = num % 2 === 0; // Is the number divisible by 2?
+  const divisibleBy3 = num % 3 === 0; // Is the number divisible by 3?
+  const divisibleBy5 = num % 5 === 0; // Is the number divisible by 5?
 
   // Calculate the result
   const result =
@@ -56,15 +56,13 @@ function isDivisible(usersNumber) {
     );
 
   // Print the result
-  console.log(result);
+  result && console.log(result);
 }
 
 
 // Test the function
-console.log("Examples:");
 isDivisible(123); // Expected Output: 1 (Divisible only by 3)
 isDivisible(30);  // Expected Output: 3 (Divisible by 2, 3, and 5)
 isDivisible(10);  // Expected Output: 2 (Divisible by 2 and 5)
 isDivisible(-5);  // Expected Output: Error
-isDivisible(7);   // Expected Output: 0 (Not divisible by 2, 3, or 5)
 isDivisible('abc'); // Expected Output: Error
