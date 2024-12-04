@@ -26,6 +26,7 @@ function isValidNumber(input) {
 * - Prints 3 if divisible by 2, 3, and 5.
 * - Prints 2 if divisible by any two of them.
 * - Prints 1 if divisible by only one of them.
+* - Prints nothing if not divisible by any.
 */
 function isDivisible(num) {
 
@@ -66,3 +67,4 @@ isDivisible(30);  // Expected Output: 3 (Divisible by 2, 3, and 5)
 isDivisible(10);  // Expected Output: 2 (Divisible by 2 and 5)
 isDivisible(-5);  // Expected Output: Error
 isDivisible('abc'); // Expected Output: Error
+isDivisible(1); // Expected Output: Nothing (Not divisible by 2, 3, or 5)
